@@ -326,13 +326,14 @@ function makePlayerO() {
 function cellClicked(id) {
     // The last character of the id corresponds to the numeric index in Grid.cells:
     var idName = id.toString();
+    //var id = "cell" + cell.toString();
     var cell = parseInt(idName[idName.length - 1]);
     if (myGrid.cells[cell] > 0 || whoseTurn !== player || gameOver) {
         // cell is already occupied or something else is wrong
         return false;
     }
     moves += 1;
-    document.getElementById(id).innerHTML = "playerText";
+    document.getElementById(id).innerHTML = playerText;
     // randomize orientation (for looks only)
     var rand = Math.random();
     if (rand < 0.3) {
